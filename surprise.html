@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Birthday Shruti ❤️</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+:root {
+    --bg-dark: oklch(0.15 0.05 300);
+    --bg-light: oklch(0.95 0.05 350);
+    --primary: oklch(0.6 0.2 350);
+    --accent: oklch(0.7 0.15 330);
+    --text-light: oklch(0.95 0.05 350);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    touch-action: none;
+}
+
+/* View Transition API */
+::view-transition-old(root) { animation: fade-out 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+::view-transition-new(root) { animation: scale-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+@keyframes fade-out { to { opacity: 0; transform: scale(0.95); filter: blur(10px); } }
+@keyframes scale-up { from { opacity: 0; transform: scale(1.05); filter: blur(10px); } to { opacity: 1; transform: scale(1); filter: blur(0); } }
+
+/* Intro */
+#intro {
+    height: 100dvh; width: 100vw;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: radial-gradient(circle at center, var(--bg-dark), #000);
+    position: relative; z-index: 100;
+}
+#intro::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle at center, white 1px, transparent 1px);
+    background-size: 50px 50px; opacity: 0.1;
+    animation: starFloat 20s linear infinite;
+}
+@keyframes starFloat { 0% { background-position: 0 0; } 100% { background-position: 100px 100px; } }
+
+.intro-btn {
+    padding: 1.5rem 3rem; font-size: 1.5rem; font-family: 'Great Vibes', cursive;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3);
+    color: white; border-radius: 50px; cursor: pointer;
+    backdrop-filter: blur(10px); transition: all 0.3s linear;
+    box-shadow: 0 0 20px rgba(255,100,150,0.3); z-index: 2;
+}
+.intro-btn:active { transform: scale(0.95); }
+
+/* Story */
+#story {
+    display: none; height: 100dvh; width: 100vw;
+    overflow-y: scroll; scroll-snap-type: y mandatory;
+    background: light-dark(var(--bg-light), var(--bg-dark));
+    scroll-behavior: smooth;
+}
+.progress-bar {
+    position: fixed; top: 0; left: 0; height: 5px; background: var(--primary);
+    z-index: 1000; transform-origin: left; width: 100%;
+    animation: scroll-progress linear;
+    animation-timeline: scroll(root);
+}
+@keyframes scroll-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* Scenes */
+.scene {
+    height: 100dvh; width: 100vw; scroll-snap-align: start; position: relative;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 2rem; overflow: hidden;
+}
+.photo-container {
+    width: 80vw; max-width: 400px; aspect-ratio: 4/5; position: relative; z-index: 2;
+}
+.photo-container img {
+    width: 100%; height: 100%; object-fit: cover; border-radius: 12px;
+}
+.caption {
+    margin-top: 2rem; font-family: 'Great Vibes', cursive;
+    font-size: clamp(2rem, 5vw, 3.5rem); text-align: center;
+    color: var(--primary); text-wrap: balance; z-index: 2;
+    text-shadow: 0 2px 10px rgba(255,255,255,0.5);
+}
+
+@supports (animation-timeline: view()) {
+    .fx-1 .photo-container {
+        background: white; padding: 15px 15px 60px 15px; border-radius: 2px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        animation: drop-in linear both; animation-timeline: view(); animation-range: entry 20% cover 50%;
+    }
+    @keyframes drop-in { 0% { transform: translateY(-100vh) rotate(-20deg); opacity: 0; } 100% { transform: translateY(0) rotate(5deg); opacity: 1; } }
+
+    .fx-2 img { animation: ken-burns linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+    @keyframes ken-burns { 0% { transform: scale(1.3) translate(-5%, -5%); } 100% { transform: scale(1) translate(0,0); } }
+
+    .fx-3 img { clip-path: polygon(50% 15%, 80% 0, 100% 30%, 50% 100%, 0 30%, 20% 0);
+        animation: heart-beat linear both; animation-timeline: view(); animation-range: entry 10% cover 50%; }
+    @keyframes heart-beat { 0% { transform: scale(0.5); opacity:0; } 50% { transform: scale(1.1); opacity:1; } 100% { transform: scale(1); opacity:1; } }
+
+    .fx-4 img { mask-image: linear-gradient(to bottom, black 25%, transparent 25%, transparent 50%, black 50%, black 75%, transparent 75%); mask-size: 100% 400%;
+        animation: split-slide linear both; animation-timeline: view(); animation-range: entry 0% cover 50%; }
+    @keyframes split-slide { 0% { mask-position: 0 100%; filter: blur(5px); } 100% { mask-position: 0 0; filter: blur(0); } }
+
+    .fx-5 img { animation: blur-sharp linear both; animation-timeline: view(); animation-range: entry 20% cover 60%; }
+    @keyframes blur-sharp { 0% { filter: blur(20px) brightness(2); transform: scale(1.2); } 100% { filter: blur(0) brightness(1); transform: scale(1); } }
+
+    .fx-6 .photo-container { animation: parallax-up linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+    .fx-6 .caption { animation: parallax-down linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+    @keyframes parallax-up { 0% { transform: translateY(100px); } 100% { transform: translateY(-100px); } }
+    @keyframes parallax-down { 0% { transform: translateY(-100px); } 100% { transform: translateY(100px); } }
+
+    .fx-7 { perspective: 1000px; }
+    .fx-7 .photo-container { animation: flip-3d linear both; animation-timeline: view(); animation-range: entry 10% cover 60%; }
+    @keyframes flip-3d { 0% { transform: rotateY(90deg) translateZ(-200px); opacity: 0; } 100% { transform: rotateY(0deg) translateZ(0); opacity: 1; } }
+
+    .fx-8 .caption { overflow: hidden; white-space: nowrap; border-right: 3px solid var(--primary);
+        animation: typewriter linear both, blink 0.5s step-end infinite alternate;
+        animation-timeline: view(); animation-range: entry 30% cover 70%; }
+    @keyframes typewriter { 0% { width: 0; opacity: 1; } 100% { width: 100%; opacity: 1; } }
+    @keyframes blink { 50% { border-color: transparent; } }
+
+    .fx-9 .photo-container { padding: 10px; background: conic-gradient(from var(--angle), #ff0055, #ffbbee, #ff0055); border-radius: 16px;
+        animation: spin-gradient 4s linear infinite, fade-up linear both;
+        animation-timeline: auto, view(); animation-range: auto, entry 10% cover 50%; }
+    @keyframes spin-gradient { 100% { --angle: 360deg; } }
+    @keyframes fade-up { 0% { opacity: 0; transform: translateY(50px); } 100% { opacity: 1; transform: translateY(0); } }
+
+    .fx-10 .photo-container::after { content: ''; position: absolute; inset: 0; background: var(--primary);
+        animation: curtain linear both; animation-timeline: view(); animation-range: entry 20% cover 60%; }
+    @keyframes curtain { 0% { transform: scaleX(1); transform-origin: right; } 100% { transform: scaleX(0); transform-origin: right; } }
+
+    .fx-11 img { border-radius: 50%; box-shadow: 0 20px 50px rgba(255,100,150,0.3);
+        animation: bubble-float linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+    @keyframes bubble-float { 0% { transform: translateY(50px) scale(0.9); } 50% { transform: translateY(-20px) scale(1.05); } 100% { transform: translateY(-50px) scale(0.95); } }
+
+    .fx-12 .photo-container { animation: pop-burst linear both; animation-timeline: view(); animation-range: entry 30% cover 60%; }
+    @keyframes pop-burst { 0% { transform: scale(0); filter: brightness(3); } 80% { transform: scale(1.1); filter: brightness(1.5); } 100% { transform: scale(1); filter: brightness(1); } }
+
+    .fx-13 { perspective: 800px; }
+    .fx-13 .photo-container { animation: tilt-scroll linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+    @keyframes tilt-scroll { 0% { transform: rotateX(30deg) rotateY(-20deg); } 50% { transform: rotateX(0deg) rotateY(0deg); } 100% { transform: rotateX(-30deg) rotateY(20deg); } }
+
+    .fx-14 img { mask-image: radial-gradient(circle, black 30%, rgba(0,0,0,0.5) 60%, transparent 80%);
+        animation: watercolor linear both; animation-timeline: view(); animation-range: entry 20% cover 70%; }
+    @keyframes watercolor { 0% { mask-size: 0% 0%; mask-position: center; } 100% { mask-size: 300% 300%; mask-position: center; } }
+
+    .fx-15 img { animation: squeeze-in linear both; animation-timeline: view(); animation-range: entry 10% cover 50%; }
+    @keyframes squeeze-in { 0% { transform: scaleX(0); opacity: 0; } 100% { transform: scaleX(1); opacity: 1; } }
+
+    .fx-16 { position: relative; }
+    .fx-16::before, .fx-16::after { content: '🌸'; position: absolute; font-size: 2rem; z-index: 10;
+        animation: petal-fall linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+    .fx-16::before { left: 20%; } .fx-16::after { right: 20%; animation-duration: 2s; }
+    @keyframes petal-fall { 0% { transform: translateY(-50vh) rotate(0deg); } 100% { transform: translateY(50vh) rotate(360deg); } }
+
+    .fx-17 img { animation: extreme-zoom linear both; animation-timeline: view(); animation-range: entry 0% cover 60%; }
+    @keyframes extreme-zoom { 0% { transform: scale(3); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+
+    .fx-18 .photo-container { animation: slow-rise linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; box-shadow: 0 30px 60px rgba(0,0,0,0.4); }
+    @keyframes slow-rise { 0% { transform: translateY(30vh); } 100% { transform: translateY(-30vh); } }
+
+    .fx-19 img { animation: pulse-glow linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+    @keyframes pulse-glow { 0% { filter: drop-shadow(0 0 0px var(--primary)); transform: scale(0.9); } 50% { filter: drop-shadow(0 0 40px var(--primary)); transform: scale(1.05); } 100% { filter: drop-shadow(0 0 10px var(--primary)); transform: scale(1); } }
+}
+
+.finale {
+    height: 100dvh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: var(--primary); color: white; scroll-snap-align: start; padding: 2rem; text-align: center;
+}
+.finale h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3rem, 8vw, 6rem); margin-bottom: 1rem; }
+.counter { font-size: 2rem; font-weight: 600; background: rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 20px; margin-bottom: 2rem; }
+.note { font-size: 1.2rem; max-width: 600px; line-height: 1.6; margin-bottom: 3rem; }
+.replay-btn { padding: 1rem 2rem; font-size: 1.2rem; border-radius: 30px; border: none; background: white; color: var(--primary); cursor: pointer; font-weight: bold; transition: transform 0.2s; }
+.replay-btn:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <div id="intro">
+        <button class="intro-btn" onclick="startSurprise()">Tap to open your surprise 💌</button>
+    </div>
+
+    <main id="story">
+        <div class="progress-bar"></div>
+        
+        <!-- Generated Scenes for Shruti (Gouri) -->
+        <section class="scene fx-1"><div class="photo-container"><img src="./src/assets/20241015_181346.jpg" alt="Memory 1" loading="lazy"></div><p class="caption">From the very first moment I saw you...</p></section>
+        <section class="scene fx-2"><div class="photo-container"><img src="./src/assets/20250126_144306.jpg" alt="Memory 2" loading="lazy"></div><p class="caption">Your smile lights up my entire world.</p></section>
+        <section class="scene fx-3"><div class="photo-container"><img src="./src/assets/20250803_144932.jpg" alt="Memory 3" loading="lazy"></div><p class="caption">Every adventure is magical with you.</p></section>
+        <section class="scene fx-4"><div class="photo-container"><img src="./src/assets/20260207_143855.jpg" alt="Memory 4" loading="lazy"></div><p class="caption">Lost in those beautiful eyes of yours.</p></section>
+        <section class="scene fx-5"><div class="photo-container"><img src="./src/assets/20260207_152631.jpg" alt="Memory 5" loading="lazy"></div><p class="caption">The way you laugh makes my day.</p></section>
+        <section class="scene fx-6"><div class="photo-container"><img src="./src/assets/20260207_152709.jpg" alt="Memory 6" loading="lazy"></div><p class="caption">Holding you is my favorite feeling.</p></section>
+        <section class="scene fx-7"><div class="photo-container"><img src="./src/assets/20260301_204341.jpg" alt="Memory 7" loading="lazy"></div><p class="caption">You make the ordinary feel extraordinary.</p></section>
+        <section class="scene fx-8"><div class="photo-container"><img src="./src/assets/20260418_191945.jpg" alt="Memory 8" loading="lazy"></div><p class="caption">I still get butterflies every time.</p></section>
+        <section class="scene fx-9"><div class="photo-container"><img src="./src/assets/20260418_192131.jpg" alt="Memory 9" loading="lazy"></div><p class="caption">You are my peace and my chaos.</p></section>
+        <section class="scene fx-10"><div class="photo-container"><img src="./src/assets/20260418_192136.jpg" alt="Memory 10" loading="lazy"></div><p class="caption">Forever my favorite date.</p></section>
+        <section class="scene fx-11"><div class="photo-container"><img src="./src/assets/IMG-20230928-WA0009.jpg" alt="Memory 11" loading="lazy"></div><p class="caption">Falling deeper in love every single day.</p></section>
+        <section class="scene fx-12"><div class="photo-container"><img src="./src/assets/IMG-20240910-WA0002.jpg" alt="Memory 12" loading="lazy"></div><p class="caption">A memory I'll keep replaying forever.</p></section>
+        <section class="scene fx-13"><div class="photo-container"><img src="./src/assets/IMG-20240928-WA0001 (1).jpg" alt="Memory 13" loading="lazy"></div><p class="caption">You are my home, Gouri.</p></section>
+        <section class="scene fx-14"><div class="photo-container"><img src="./src/assets/IMG-20240928-WA0005 (1).jpg" alt="Memory 14" loading="lazy"></div><p class="caption">Nothing compares to you.</p></section>
+        <section class="scene fx-15"><div class="photo-container"><img src="./src/assets/IMG-20260221-WA0005.jpg" alt="Memory 15" loading="lazy"></div><p class="caption">My heart is fully yours.</p></section>
+        <section class="scene fx-16"><div class="photo-container"><img src="./src/assets/IMG-20260221-WA0021.jpg" alt="Memory 16" loading="lazy"></div><p class="caption">Our inside jokes and silly moments...</p></section>
+        <section class="scene fx-17"><div class="photo-container"><img src="./src/assets/IMG-20260221-WA0023.jpg" alt="Memory 17" loading="lazy"></div><p class="caption">You are my today and all of my tomorrows.</p></section>
+        <section class="scene fx-18"><div class="photo-container"><img src="./src/assets/IMG-20260512-WA0063.jpg" alt="Memory 18" loading="lazy"></div><p class="caption">Life is just better when you're by my side.</p></section>
+        <section class="scene fx-19"><div class="photo-container"><img src="./src/assets/Snapchat-1795217538.jpg" alt="Memory 19" loading="lazy"></div><p class="caption">To endless more memories together. Happy Birthday!</p></section>
+
+        <section class="finale">
+            <h1>Happy Birthday, Shruti 🎂❤️</h1>
+            <div class="counter">Days we've been together: <span id="days"></span></div>
+            <p class="note">To my amazing Gouri, thank you for every single beautiful memory we've made so far. You mean everything to me, and I can't wait to make a million more. I love you!</p>
+            <button class="replay-btn" onclick="location.reload()">Replay Our Story 🔄</button>
+        </section>
+    </main>
+
+    <script>
+        function startSurprise() {
+            if (document.startViewTransition) {
+                document.startViewTransition(() => {
+                    document.getElementById('intro').style.display = 'none';
+                    document.getElementById('story').style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+            } else {
+                document.getElementById('intro').style.display = 'none';
+                document.getElementById('story').style.display = 'block';
+            }
+        }
+
+        // Calculate days together (Based on earliest timestamp found in filenames)
+        const startDate = new Date('2023-09-28'); 
+        const today = new Date();
+        const diffTime = Math.abs(today - startDate);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+        document.getElementById('days').innerText = diffDays;
+
+        // Intersection Observer Fallback
+        if (!CSS.supports('animation-timeline: view()')) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            document.querySelectorAll('.scene').forEach(scene => {
+                scene.style.opacity = 0;
+                scene.style.transform = 'translateY(50px)';
+                scene.style.transition = 'all 1s ease-out';
+                observer.observe(scene);
+            });
+        }
+    </script>
+</body>
+</html>
