@@ -7,17 +7,23 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        dancing: ['"Dancing Script"', 'cursive'],
+        dancing: ['"Great Vibes"', 'cursive'],
         poppins: ['Poppins', 'sans-serif'],
+        playfair: ['"Playfair Display"', 'serif'],
+        kannada: ['"Aneka Kannada"', 'sans-serif'],
       },
       animation: {
-        'float': 'float 6s ease-in-out infinite',
-        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'float-slow': 'float 8s ease-in-out infinite',
+        'pulse-soft': 'pulseSoft 4s ease-in-out infinite',
       },
       keyframes: {
         float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
+          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+          '50%': { transform: 'translateY(-20px) rotate(2deg)' },
+        },
+        pulseSoft: {
+          '0%, 100%': { transform: 'scale(1)', opacity: '0.8' },
+          '50%': { transform: 'scale(1.05)', opacity: '1' },
         }
       }
     },
