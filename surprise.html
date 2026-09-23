@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Happy Birthday Shruti ❤️</title>
     <style>
+
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
 
 @property --angle {
@@ -185,6 +186,19 @@ body {
 .note { font-size: 1.2rem; max-width: 600px; line-height: 1.6; margin-bottom: 3rem; }
 .replay-btn { padding: 1rem 2rem; font-size: 1.2rem; border-radius: 30px; border: none; background: white; color: var(--primary); cursor: pointer; font-weight: bold; transition: transform 0.2s; }
 .replay-btn:hover { transform: scale(1.05); }
+    
+.photo-container {
+    border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    display: flex; flex-direction: column;
+}
+.quote-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, transparent 100%);
+    padding: 3rem 1.5rem 1.5rem 1.5rem; text-align: center; display: flex; flex-direction: column; gap: 0.5rem; z-index: 10;
+}
+.quote-eng { font-family: 'Great Vibes', cursive; font-size: clamp(2rem, 6vw, 2.8rem); color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.8); line-height: 1.1; }
+.quote-kan { font-family: 'Poppins', sans-serif; font-size: clamp(0.9rem, 3vw, 1.2rem); color: #ffd1dc; font-weight: 500; opacity: 0.9; text-shadow: 0 2px 5px rgba(0,0,0,1); line-height: 1.4; }
+
     </style>
 </head>
 <body>
@@ -194,28 +208,177 @@ body {
 
     <main id="story">
         <div class="progress-bar"></div>
-        
-        <!-- Generated Scenes for Shruti (Gouri) -->
-        <section class="scene fx-1"><div class="photo-container"><img src="./src/assets/20241015_181346.jpg" alt="Memory 1" loading="lazy"></div><p class="caption">From the very first moment I saw you...</p></section>
-        <section class="scene fx-2"><div class="photo-container"><img src="./src/assets/20250126_144306.jpg" alt="Memory 2" loading="lazy"></div><p class="caption">Your smile lights up my entire world.</p></section>
-        <section class="scene fx-3"><div class="photo-container"><img src="./src/assets/20250803_144932.jpg" alt="Memory 3" loading="lazy"></div><p class="caption">Every adventure is magical with you.</p></section>
-        <section class="scene fx-4"><div class="photo-container"><img src="./src/assets/20260207_143855.jpg" alt="Memory 4" loading="lazy"></div><p class="caption">Lost in those beautiful eyes of yours.</p></section>
-        <section class="scene fx-5"><div class="photo-container"><img src="./src/assets/20260207_152631.jpg" alt="Memory 5" loading="lazy"></div><p class="caption">The way you laugh makes my day.</p></section>
-        <section class="scene fx-6"><div class="photo-container"><img src="./src/assets/20260207_152709.jpg" alt="Memory 6" loading="lazy"></div><p class="caption">Holding you is my favorite feeling.</p></section>
-        <section class="scene fx-7"><div class="photo-container"><img src="./src/assets/20260301_204341.jpg" alt="Memory 7" loading="lazy"></div><p class="caption">You make the ordinary feel extraordinary.</p></section>
-        <section class="scene fx-8"><div class="photo-container"><img src="./src/assets/20260418_191945.jpg" alt="Memory 8" loading="lazy"></div><p class="caption">I still get butterflies every time.</p></section>
-        <section class="scene fx-9"><div class="photo-container"><img src="./src/assets/20260418_192131.jpg" alt="Memory 9" loading="lazy"></div><p class="caption">You are my peace and my chaos.</p></section>
-        <section class="scene fx-10"><div class="photo-container"><img src="./src/assets/20260418_192136.jpg" alt="Memory 10" loading="lazy"></div><p class="caption">Forever my favorite date.</p></section>
-        <section class="scene fx-11"><div class="photo-container"><img src="./src/assets/IMG-20230928-WA0009.jpg" alt="Memory 11" loading="lazy"></div><p class="caption">Falling deeper in love every single day.</p></section>
-        <section class="scene fx-12"><div class="photo-container"><img src="./src/assets/IMG-20240910-WA0002.jpg" alt="Memory 12" loading="lazy"></div><p class="caption">A memory I'll keep replaying forever.</p></section>
-        <section class="scene fx-13"><div class="photo-container"><img src="./src/assets/IMG-20240928-WA0001 (1).jpg" alt="Memory 13" loading="lazy"></div><p class="caption">You are my home, Gouri.</p></section>
-        <section class="scene fx-14"><div class="photo-container"><img src="./src/assets/IMG-20240928-WA0005 (1).jpg" alt="Memory 14" loading="lazy"></div><p class="caption">Nothing compares to you.</p></section>
-        <section class="scene fx-15"><div class="photo-container"><img src="./src/assets/IMG-20260221-WA0005.jpg" alt="Memory 15" loading="lazy"></div><p class="caption">My heart is fully yours.</p></section>
-        <section class="scene fx-16"><div class="photo-container"><img src="./src/assets/IMG-20260221-WA0021.jpg" alt="Memory 16" loading="lazy"></div><p class="caption">Our inside jokes and silly moments...</p></section>
-        <section class="scene fx-17"><div class="photo-container"><img src="./src/assets/IMG-20260221-WA0023.jpg" alt="Memory 17" loading="lazy"></div><p class="caption">You are my today and all of my tomorrows.</p></section>
-        <section class="scene fx-18"><div class="photo-container"><img src="./src/assets/IMG-20260512-WA0063.jpg" alt="Memory 18" loading="lazy"></div><p class="caption">Life is just better when you're by my side.</p></section>
-        <section class="scene fx-19"><div class="photo-container"><img src="./src/assets/Snapchat-1795217538.jpg" alt="Memory 19" loading="lazy"></div><p class="caption">To endless more memories together. Happy Birthday!</p></section>
-
+        <section class="scene fx-1">
+            <div class="photo-container">
+                <img src="./src/assets/20241015_181346.jpg" alt="Memory 1" loading="lazy">
+                <div class="quote-overlay">
+                    <span class="quote-eng">From the moment I saw you, my heart knew.</span>
+                    <span class="quote-kan">ನಾನು ನಿನ್ನನ್ನು ನೋಡಿದ ಕ್ಷಣದಿಂದ, ನನ್ನ ಹೃದಯಕ್ಕೆ ಗೊತ್ತಿತ್ತು.</span>
+                </div>
+            </div>
+        </section>
+        <section class="scene fx-2">
+            <div class="photo-container">
+                <img src="./src/assets/20250126_144306.jpg" alt="Memory 2" loading="lazy">
+                <div class="quote-overlay">
+                    <span class="quote-eng">Your smile is my favorite view in the whole world.</span>
+                    <span class="quote-kan">ನಿನ್ನ ನಗುವೇ ಈ ಪ್ರಪಂಚದಲ್ಲಿ ನನ್ನ ಅಚ್ಚುಮೆಚ್ಚಿನ ದೃಶ್ಯ.</span>
+                </div>
+            </div>
+        </section>
+        <section class="scene fx-3">
+            <div class="photo-container">
+                <img src="./src/assets/20250803_144932.jpg" alt="Memory 3" loading="lazy">
+                <div class="quote-overlay">
+                    <span class="quote-eng">Every adventure is magical when you are with me.</span>
+                    <span class="quote-kan">ನೀನು ಜೊತೆಯಲ್ಲಿದ್ದಾಗ ಪ್ರತಿಯೊಂದು ಪಯಣವೂ ಅದ್ಭುತ.</span>
+                </div>
+            </div>
+        </section>
+        <section class="scene fx-4">
+            <div class="photo-container">
+                <img src="./src/assets/20260207_143855.jpg" alt="Memory 4" loading="lazy">
+                <div class="quote-overlay">
+                    <span class="quote-eng">Lost in your eyes, where my forever begins.</span>
+                    <span class="quote-kan">ನಿನ್ನ ಕಣ್ಣುಗಳಲ್ಲಿ ಕಳೆದುಹೋಗಿರುವೆ, ಅಲ್ಲಿಂದಲೇ ನನ್ನ ಶಾಶ್ವತ ಶುರು.</span>
+                </div>
+            </div>
+        </section>
+        <section class="scene fx-5">
+            <div class="photo-container">
+                <img src="./src/assets/20260207_152631.jpg" alt="Memory 5" loading="lazy">
+                <div class="quote-overlay">
+                    <span class="quote-eng">Your laugh is the sweetest melody to my ears.</span>
+                    <span class="quote-kan">ನಿನ್ನ ನಗು ನನ್ನ ಕಿವಿಗೆ ಅತ್ಯಂತ ಸಿಹಿಯಾದ ಸಂಗೀತ.</span>
+                </div>
+            </div>
+        </section>
+        <section class="scene fx-6">
+            <div class="photo-container">
+                <img src="./src/assets/20260207_152709.jpg" alt="Memory 6" loading="lazy">
+                <div class="quote-overlay">
+                    <span class="quote-eng">Holding you feels like holding my entire world.</span>
+                    <span class="quote-kan">ನಿನ್ನನ್ನು ಅಪ್ಪಿಕೊಂಡಾಗ ಇಡೀ ಪ್ರಪಂಚವೇ ನನ್ನ ಕೈಯಲ್ಲಿದ್ದಂತೆ ಭಾಸವಾಗುತ್ತದೆ.</span>
+                </div>
+            </div>
+        </section>
+        <section class="scene fx-7">
+            <div class="photo-container">
+                <img src="./src/assets/20260301_204341.jpg" alt="Memory 7" loading="lazy">
+                <div class="quote-overlay">
+                    <span class="quote-eng">You make ordinary moments feel extraordinary.</span>
+                    <span class="quote-kan">ಸಾಮಾನ್ಯ ಕ್ಷಣಗಳನ್ನು ನೀನು ಅಸಾಮಾನ್ಯವಾಗಿಸುತ್ತೀಯ.</span>
+                </div>
+            </div>
+        </section>
+        <section class="scene fx-8">
+            <div class="photo-container">
+                <img src="./src/assets/20260418_191945.jpg" alt="Memory 8" loading="lazy">
+                <div class="quote-overlay">
+                    <span class="quote-eng">I still get butterflies every time I see you.</span>
+                    <span class="quote-kan">ನಿನ್ನನ್ನು ನೋಡಿದಾಗಲೆಲ್ಲಾ ನನ್ನೊಳಗೆ ಇಂದಿಗೂ ಅದೇ ರೋಮಾಂಚನ.</span>
+                </div>
+            </div>
+        </section>
+        <section class="scene fx-9">
+            <div class="photo-container">
+                <img src="./src/assets/20260418_192131.jpg" alt="Memory 9" loading="lazy">
+                <div class="quote-overlay">
+                    <span class="quote-eng">You are my peace, my home, and my everything.</span>
+                    <span class="quote-kan">ನೀನೇ ನನ್ನ ನೆಮ್ಮದಿ, ನನ್ನ ಮನೆ ಮತ್ತು ನನ್ನೆಲ್ಲವೂ.</span>
+                </div>
+            </div>
+        </section>
+        <section class="scene fx-10">
+            <div class="photo-container">
+                <img src="./src/assets/20260418_192136.jpg" alt="Memory 10" loading="lazy">
+                <div class="quote-overlay">
+                    <span class="quote-eng">Every memory with you is a treasure I hold dear.</span>
+                    <span class="quote-kan">ನಿನ್ನೊಂದಿಗಿನ ಪ್ರತಿಯೊಂದು ನೆನಪೂ ನನಗೆ ಅಮೂಲ್ಯವಾದ ಸಂಪತ್ತು.</span>
+                </div>
+            </div>
+        </section>
+        <section class="scene fx-11">
+            <div class="photo-container">
+                <img src="./src/assets/IMG-20230928-WA0009.jpg" alt="Memory 11" loading="lazy">
+                <div class="quote-overlay">
+                    <span class="quote-eng">Falling deeper in love with you every single day.</span>
+                    <span class="quote-kan">ಪ್ರತಿದಿನ ನಿನ್ನ ಮೇಲೆ ಪ್ರೀತಿ ಇನ್ನಷ್ಟು ಹೆಚ್ಚಾಗುತ್ತಿದೆ.</span>
+                </div>
+            </div>
+        </section>
+        <section class="scene fx-12">
+            <div class="photo-container">
+                <img src="./src/assets/IMG-20240910-WA0002.jpg" alt="Memory 12" loading="lazy">
+                <div class="quote-overlay">
+                    <span class="quote-eng">A beautiful moment frozen in time, just for us.</span>
+                    <span class="quote-kan">ನಮಗಾಗಿ ಕಾಲವೇ ನಿಂತಂತಹ ಒಂದು ಸುಂದರ ಕ್ಷಣ.</span>
+                </div>
+            </div>
+        </section>
+        <section class="scene fx-13">
+            <div class="photo-container">
+                <img src="./src/assets/IMG-20240928-WA0001 (1).jpg" alt="Memory 13" loading="lazy">
+                <div class="quote-overlay">
+                    <span class="quote-eng">No matter where we are, together is my favorite place.</span>
+                    <span class="quote-kan">ನಾವು ಎಲ್ಲೇ ಇದ್ದರೂ, ನಿನ್ನ ಜೊತೆಯಲ್ಲಿರುವುದೇ ನನ್ನ ಅಚ್ಚುಮೆಚ್ಚಿನ ಜಾಗ.</span>
+                </div>
+            </div>
+        </section>
+        <section class="scene fx-14">
+            <div class="photo-container">
+                <img src="./src/assets/IMG-20240928-WA0005 (1).jpg" alt="Memory 14" loading="lazy">
+                <div class="quote-overlay">
+                    <span class="quote-eng">You are the missing piece to my soul.</span>
+                    <span class="quote-kan">ನನ್ನ ಆತ್ಮಕ್ಕೆ ನೀನೇ ಆ ಕೊರತೆಯಾಗಿದ್ದ ತುಣುಕು.</span>
+                </div>
+            </div>
+        </section>
+        <section class="scene fx-15">
+            <div class="photo-container">
+                <img src="./src/assets/IMG-20260221-WA0005.jpg" alt="Memory 15" loading="lazy">
+                <div class="quote-overlay">
+                    <span class="quote-eng">My heart belongs completely and entirely to you.</span>
+                    <span class="quote-kan">ನನ್ನ ಹೃದಯ ಸಂಪೂರ್ಣವಾಗಿ ನಿನಗೆ ಮಾತ್ರ ಸೇರಿದೆ.</span>
+                </div>
+            </div>
+        </section>
+        <section class="scene fx-16">
+            <div class="photo-container">
+                <img src="./src/assets/IMG-20260221-WA0021.jpg" alt="Memory 16" loading="lazy">
+                <div class="quote-overlay">
+                    <span class="quote-eng">Through every joy and laugh, I love you more.</span>
+                    <span class="quote-kan">ಪ್ರತಿ ಸಂತೋಷ ಮತ್ತು ನಗುವಿನಲ್ಲೂ, ನಾನು ನಿನ್ನನ್ನು ಹೆಚ್ಚು ಪ್ರೀತಿಸುತ್ತೇನೆ.</span>
+                </div>
+            </div>
+        </section>
+        <section class="scene fx-17">
+            <div class="photo-container">
+                <img src="./src/assets/IMG-20260221-WA0023.jpg" alt="Memory 17" loading="lazy">
+                <div class="quote-overlay">
+                    <span class="quote-eng">You are my today and all of my tomorrows.</span>
+                    <span class="quote-kan">ನೀನೇ ನನ್ನ ಇವತ್ತು ಮತ್ತು ನನ್ನೆಲ್ಲಾ ನಾಳೆಗಳು.</span>
+                </div>
+            </div>
+        </section>
+        <section class="scene fx-18">
+            <div class="photo-container">
+                <img src="./src/assets/IMG-20260512-WA0063.jpg" alt="Memory 18" loading="lazy">
+                <div class="quote-overlay">
+                    <span class="quote-eng">Life is just a beautiful dream when you're by my side.</span>
+                    <span class="quote-kan">ನೀನು ನನ್ನ ಪಕ್ಕದಲ್ಲಿದ್ದಾಗ ಜೀವನವು ಒಂದು ಸುಂದರ ಕನಸಾಗುತ್ತದೆ.</span>
+                </div>
+            </div>
+        </section>
+        <section class="scene fx-19">
+            <div class="photo-container">
+                <img src="./src/assets/Snapchat-1795217538.jpg" alt="Memory 19" loading="lazy">
+                <div class="quote-overlay">
+                    <span class="quote-eng">To endless more memories together. Happy Birthday, Gouri!</span>
+                    <span class="quote-kan">ಇದೇ ರೀತಿ ಇನ್ನಷ್ಟು ನೆನಪುಗಳು ಜೊತೆಯಾಗಲಿ. ಹುಟ್ಟುಹಬ್ಬದ ಶುಭಾಶಯಗಳು, ಗೌರಿ!</span>
+                </div>
+            </div>
+        </section>
         <section class="finale">
             <h1>Happy Birthday, Shruti 🎂❤️</h1>
             <div class="counter">Days we've been together: <span id="days"></span></div>
@@ -238,14 +401,12 @@ body {
             }
         }
 
-        // Calculate days together (Based on earliest timestamp found in filenames)
-        const startDate = new Date('2023-09-28'); 
+        const startDate = new Date('2023-09-28');
         const today = new Date();
         const diffTime = Math.abs(today - startDate);
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         document.getElementById('days').innerText = diffDays;
 
-        // Intersection Observer Fallback
         if (!CSS.supports('animation-timeline: view()')) {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
