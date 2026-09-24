@@ -104,6 +104,7 @@ export default function App() {
   const diffDays = Math.ceil(Math.abs(new Date() - startDate) / (1000 * 60 * 60 * 24));
   const currentBg = slide >= 0 && slide < images.length ? images[slide] : images[0];
 
+  // Animation variants for smooth page transitions
   const variants = {
     enter: (dir) => ({ x: dir > 0 ? 50 : -50, opacity: 0, scale: 0.95, filter: "blur(10px)" }),
     center: { zIndex: 1, x: 0, opacity: 1, scale: 1, filter: "blur(0px)" },
