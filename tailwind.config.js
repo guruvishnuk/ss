@@ -30,3 +30,5 @@ export default {
   },
   plugins: [],
 }
+
+// Added standard colors for potential future use
