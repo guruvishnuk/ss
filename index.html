@@ -1,16 +1,182 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&family=Aneka+Kannada:wght@400;500&display=swap" rel="stylesheet">
-    <title>Happy Birthday Gouri ❤️</title>
-  </head>
-  <body class="bg-rose-50 overflow-hidden touch-none">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ನನ್ನ ಪ್ರೀತಿಯ ಕಥೆ (My Love Story)</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1a0000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .slideshow-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 2s ease-in-out, transform 6s ease-in-out;
+    transform: scale(1.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+  }
+  .slide.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%);
+  }
+  .text-box {
+    position: relative;
+    z-index: 10;
+    color: #fff;
+    text-align: center;
+    max-width: 80%;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255, 20, 147, 0.15); /* Deep Pink with transparency */
+    box-shadow: 0 0 30px rgba(255, 20, 147, 0.4);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 105, 180, 0.3);
+    animation: floating 4s ease-in-out infinite;
+  }
+  @keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+  }
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: #ffb3d9;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+    font-weight: bold;
+  }
+  p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: #ffe6f2;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+  }
+  
+  /* Romantic Falling Hearts Effect */
+  .heart {
+    position: absolute;
+    top: -10%;
+    color: #ff4d4d;
+    font-size: 1.5rem;
+    animation: fall linear infinite;
+    z-index: 20;
+    pointer-events: none;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+  }
+  @keyframes fall {
+    0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
+    100% { transform: translateY(110vh) scale(0.5) rotate(360deg); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="slideshow-container" id="slideshow">
+  
+  <!-- Slide 1 -->
+  <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1920&q=80');">
+    <div class="overlay"></div>
+    <div class="text-box">
+      <h1>ನನ್ನ ಪ್ರಾಣ (My Life)</h1>
+      <p>ನೀನು ನನ್ನ ಜೀವನಕ್ಕೆ ಬಂದ ಮೇಲೆ ಎಲ್ಲವೂ ಸುಂದರವಾಗಿದೆ. ನಿನ್ನ ಪ್ರತಿಯೊಂದು ನಗು ನನ್ನ ಹೃದಯದಲ್ಲಿ ಹೊಸ ಆಸೆಯನ್ನು ಮೂಡಿಸುತ್ತದೆ.</p>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=1920&q=80');">
+    <div class="overlay"></div>
+    <div class="text-box">
+      <h1>ನಮ್ಮ ಮೊದಲ ಭೇಟಿ (Our First Meeting)</h1>
+      <p>ನಾವು ಮೊದಲು ಭೇಟಿಯಾದ ಆ ದಿನ ನನ್ನ ನೆನಪಿನಲ್ಲಿ ಎಂದೆಂದಿಗೂ ಹಸಿರಾಗಿರುತ್ತದೆ. ಆ ಕ್ಷಣ ನಿನ್ನ ಕಣ್ಣುಗಳಲ್ಲಿ ನನ್ನ ಇಡೀ ಪ್ರಪಂಚವನ್ನು ಕಂಡೆ.</p>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1920&q=80');">
+    <div class="overlay"></div>
+    <div class="text-box">
+      <h1>ನಿನ್ನ ಜೊತೆಯ ಹೆಜ್ಜೆ (Walking With You)</h1>
+      <p>ನಿನ್ನ ಕೈಹಿಡಿದು ನಡೆಯುವ ಪ್ರತಿಯೊಂದು ಕ್ಷಣವೂ ನನಗೆ ಸ್ವರ್ಗದ ಅನುಭವ ನೀಡುತ್ತದೆ. ನನ್ನೆಲ್ಲಾ ಕಷ್ಟಗಳನ್ನು ಮರೆಸುವ ಶಕ್ತಿ ನಿನ್ನ ಆಲಿಂಗನದಲ್ಲಿದೆ.</p>
+    </div>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1920&q=80');">
+    <div class="overlay"></div>
+    <div class="text-box">
+      <h1>ಜೊತೆಯಾಗಿ ಸಾಗೋಣ (Let's Walk Together)</h1>
+      <p>ಬದುಕು ಎಷ್ಟೇ ಕಠಿಣವಾದರೂ, ನೀನು ನನ್ನ ಜೊತೆಗಿದ್ದರೆ ನಾನು ಯಾವುದಕ್ಕೂ ಹೆದರಲಾರೆ. ನನ್ನ ಕೊನೆಯ ಉಸಿರಿರುವವರೆಗೂ ನಿನ್ನನ್ನು ಪ್ರೀತಿಸುತ್ತೇನೆ.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Slideshow Logic
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+
+  function showNextSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  // Initialize first slide
+  slides[currentSlide].classList.add('active');
+  
+  // Change slide every 6 seconds
+  setInterval(showNextSlide, 6000);
+
+  // Falling Hearts Logic
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    
+    // Mix of different romantic emojis
+    const hearts = ['❤️', '💖', '💕', '✨', '🌸'];
+    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+    
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = Math.random() * 4 + 5 + 's'; // 5 to 9 seconds falling time
+    heart.style.fontSize = Math.random() * 1.2 + 0.8 + 'rem'; // Different sizes
+    document.body.appendChild(heart);
+
+    // Remove heart after it falls to prevent memory leak
+    setTimeout(() => {
+      heart.remove();
+    }, 9000);
+  }
+
+  // Create new hearts continuously
+  setInterval(createHeart, 400);
+</script>
+
+</body>
 </html>
+
+<!-- End of file -->
