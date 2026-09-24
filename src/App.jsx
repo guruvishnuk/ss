@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, ChevronRight, ChevronLeft, Sparkles, Gift } from 'lucide-react';
 
-// Images
+// Original images to restore on the final day:
+/*
 const images = [
     "20241015_181346.jpg", "20250126_144306.jpg", "20250803_144932.jpg", "20260207_143855.jpg", 
     "20260207_152631.jpg", "20260207_152709.jpg", "20260301_204341.jpg", "20260418_191945.jpg", 
@@ -10,6 +11,11 @@ const images = [
     "IMG-20240928-WA0001 (1).jpg", "IMG-20240928-WA0005 (1).jpg", "IMG-20260221-WA0005.jpg", 
     "IMG-20260221-WA0021.jpg", "IMG-20260221-WA0023.jpg", "IMG-20260512-WA0063.jpg", "Snapchat-1795217538.jpg"
 ].map(name => `/src/assets/${name}`);
+*/
+
+// Temporary default image for testing
+const defaultImage = "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1920&q=80";
+const images = Array(19).fill(defaultImage);
 
 // Quotes
 const quotes = [
