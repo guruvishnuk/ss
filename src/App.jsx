@@ -45,6 +45,43 @@ export default function App() {
             </motion.div>
           )}
 
+          {/* STEP 2: QUESTION */}
+          {step === 'question' && (
+            <motion.div
+              key="question"
+              variants={pageVariants}
+              initial="initial"
+              animate="in"
+              exit="out"
+              transition={{ duration: 0.8 }}
+              className="bg-white/10 backdrop-blur-2xl p-8 md:p-14 rounded-[3rem] border border-white/20 shadow-[0_0_50px_rgba(225,29,72,0.3)] flex flex-col items-center w-full max-w-2xl"
+            >
+              <h2 className="font-kannada text-3xl md:text-4xl text-rose-50 font-bold mb-4 leading-relaxed">
+                ನೀನು ನನ್ನ ಜೀವನಕ್ಕೆ ಎಷ್ಟು ಮುಖ್ಯ ಗೊತ್ತಾ?
+              </h2>
+              <p className="font-playfair italic text-xl text-rose-200 mb-10">
+                (Do you know how important you are to my life?)
+              </p>
+
+              <div className="flex flex-col gap-4 w-full">
+                {[
+                  { kn: "ನನಗೆ ಗೊತ್ತು", en: "I know" },
+                  { kn: "ಹೇಳು ಕೇಳೋಣ", en: "Tell me, let's hear it" },
+                  { kn: "ನೀನೇ ನನ್ನ ಸರ್ವಸ್ವ", en: "You are my everything" }
+                ].map((opt, i) => (
+                  <button 
+                    key={i}
+                    onClick={() => setStep('reveal')}
+                    className="w-full py-4 px-6 bg-rose-950/40 hover:bg-rose-800/60 border border-rose-300/30 rounded-2xl text-rose-50 text-lg md:text-xl font-medium transition-all hover:scale-[1.02] active:scale-95 shadow-md flex justify-between items-center group"
+                  >
+                    <span>{opt.kn}</span>
+                    <span className="text-rose-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity">{opt.en}</span>
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+          )}
+
         </AnimatePresence>
       </main>
     </div>
